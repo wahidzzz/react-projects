@@ -1,13 +1,80 @@
+@font-face {
+  font-family: "digit";
+  src: url("./assets/digital-7.ttf"); /* IE9 Compat Modes */
+  src: url("./assets/digital-7-italic.ttf") format("embedded-opentype"),
+    url("./assets/digital-7.ttf") format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "digit", Fallback, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --dark: #020b14;
+  --back: #0e1827;
+  --high: #393e46;
+  --accent: #d65a31;
+  --light: #eeeeee;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+  color: var(--light);
+  background-color: var(--dark);
+  min-height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.clock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 5rem;
+  margin: 1rem 0 1rem 0;
+}
+.clockItem {
+  margin: 0.3rem;
+  padding: 1rem;
+  /* max-width: 150px;
+  min-width: 100px; */
+  background-color: var(--back);
+  border-radius: 0.5rem;
+  cursor: default;
+  /* box-shadow: var(--accent) 0px 2px 5px -1px, var(--accent) 0px 1px 3px -1px; */
+  box-shadow: var(--accent) 3px 3px 6px 0px inset,
+    var(--light) -3px -3px 6px 1px inset;
+}
+.seconds {
+  color: var(--accent);
+}
+.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  padding: 0.2rem;
+  background-color: var(--back);
+  border-radius: 0.5rem;
+  /* width: 6%; */
+}
+.s-link,
+.s-link a {
+  padding: 0.2rem;
+  font-size: 2rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+@media only screen and (max-width: 480px) {
+  .clock {
+    font-size: 2rem;
+  }
 }
